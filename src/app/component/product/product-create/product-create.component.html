@@ -1,1 +1,23 @@
-<p>product-create works!</p>
+<mat-card class="card-create">
+  <mat-card-title>
+    Novo Sensor
+  </mat-card-title>
+  <form>
+    <mat-form-field>
+      <input matInput placeholder="Nome do Sensor" [(ngModel)]="product.nome_do_sensor" name="nome_do_sensor">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Localização" [(ngModel)]="product.localizacao" name="localizacao">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Tipo de Sensor" [(ngModel)]="product.tipo_de_sensor" name="tipo_de_sensor">
+    </mat-form-field>
+  </form>
+</mat-card>
+<button mat-raised-button (click)="createProduct()" color="primary">
+  Salvar
+</button>
+
+<button mat-raised-button (click)="cancel()" color="basic">
+  Voltar
+</button>
