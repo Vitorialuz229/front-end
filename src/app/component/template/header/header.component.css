@@ -5,6 +5,7 @@
   color: #6E7C8F;
   padding: 0 16px;
   border-bottom: 2px solid #ccc;
+  flex-wrap: wrap; 
 }
 
 .header a {
@@ -22,4 +23,35 @@
   padding-left: 20px;
   font-size: 20px;
   font-weight: 500;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+  .header {
+    padding: 0 8px;
+  }
+
+  .header .title-group {
+    font-size: 18px;
+  }
+
+  .header .logo {
+    max-height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header .title-group {
+    padding-left: 0;
+    font-size: 16px;
+  }
+
+  .header .logo {
+    max-height: 40px;
+  }
 }
