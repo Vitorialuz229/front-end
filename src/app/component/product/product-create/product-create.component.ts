@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
@@ -9,36 +9,37 @@ import { MatInputModule } from '@angular/material/input'
 
 import { ProductService } from '../../service/product.service';
 import { Product } from '../../interface/product';
-import { ProductReadComponent } from '../product-read/product-read.component';
 
 @Component({
   selector: 'app-product-create',
   standalone: true,
-  imports: [MatFormFieldModule, MatCardModule, MatInputModule, MatButtonModule, FormsModule, HttpClientModule, ProductReadComponent],
+  imports: [MatFormFieldModule, MatCardModule, MatInputModule, MatButtonModule, ReactiveFormsModule, HttpClientModule],
   templateUrl: './product-create.component.html',
   styleUrl: './product-create.component.css',
   providers: [ProductService]
 })
 export class ProductCreateComponent implements OnInit {
+  productForm!: FormGroup;
 
-  product: Product = {
-    nome_do_sensor: "",
-    localizacao: "",
-    tipo_de_sensor: ""
+  constructor(private productService: ProductService, private router: Router, private fb: FormBuilder) {
+    this.productForm = this.fb.group({
+      nome_do_sensor: ['', Validators.required],
+      localizacao: ['', Validators.required],
+      tipo_de_sensor: ['', Validators.required]
+    });
   }
-
-  constructor(private productService: ProductService, private router: Router) { }
 
   ngOnInit(): void {
 
   }
 
   createProduct(): void {
-    this.productService.create(this.product)
+    const product: Product = this.productForm.value;
+    this.productService.create(product)
       .subscribe(() => {
-        this.productService.showMessage("Operação realizada com sucesso")
-        this.router.navigate(['/sensor'])
-      })
+        this.productService.showMessage("Operação realizada com sucesso");
+        this.router.navigate(['/sensor']);
+      });
   }
 
   cancel(): void {

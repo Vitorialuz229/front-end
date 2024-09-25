@@ -2,22 +2,39 @@
   <mat-card-title>
     Novo Sensor
   </mat-card-title>
-  <form>
-    <mat-form-field>
-      <input matInput placeholder="Nome do Sensor" [(ngModel)]="product.nome_do_sensor" name="nome_do_sensor">
+  <form [formGroup]="productForm" (ngSubmit)="createProduct()">
+    <mat-form-field appearance="fill">
+      <mat-label>Nome do Sensor</mat-label>
+      <input matInput formControlName="nome_do_sensor">
+      <mat-error *ngIf="productForm.get('nome_do_sensor')?.invalid && productForm.get('nome_do_sensor')?.touched">
+        Nome do sensor é obrigatório.
+      </mat-error>
     </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Localização" [(ngModel)]="product.localizacao" name="localizacao">
+
+    <mat-form-field appearance="fill">
+      <mat-label>Localização</mat-label>
+      <input matInput formControlName="localizacao">
+      <mat-error *ngIf="productForm.get('localizacao')?.invalid && productForm.get('localizacao')?.touched">
+        Localização é obrigatória.
+      </mat-error>
     </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Tipo de Sensor" [(ngModel)]="product.tipo_de_sensor" name="tipo_de_sensor">
+
+    <mat-form-field appearance="fill">
+      <mat-label>Tipo de Sensor</mat-label>
+      <input matInput formControlName="tipo_de_sensor">
+      <mat-error *ngIf="productForm.get('tipo_de_sensor')?.invalid && productForm.get('tipo_de_sensor')?.touched">
+        Tipo de sensor é obrigatório.
+      </mat-error>
     </mat-form-field>
+
+    <div class="button-container">
+      <button mat-raised-button type="submit" [disabled]="productForm.invalid" class="custom-button">
+        Salvar
+      </button>
+
+      <button mat-raised-button (click)="cancel()" class="custom-back-button">
+        Voltar
+      </button>
+    </div>
   </form>
 </mat-card>
-<button mat-raised-button (click)="createProduct()" class="custom-button">
-  Salvar
-</button>
-
-<button mat-raised-button (click)="cancel()" class="custom-back-button">
-  Voltar
-</button>

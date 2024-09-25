@@ -4,3 +4,14 @@
   color: #042F2E;
   border: none;
 }
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 16px;
+}
+
+h2 {
+  margin: 0;
+}
