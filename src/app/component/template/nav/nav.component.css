@@ -1,9 +1,18 @@
 .sidenav{
   width: 200px;
+  background-color: #263238;
 }
 
 .sidenav a {
-  color: #fff
+  color: #e0f7fa;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  padding: 12px;
+}
+
+.sidenav a:hover {
+  background-color: #455a64;
 }
 
 .sidenav i {
@@ -11,6 +20,7 @@
   vertical-align: bottom;
 }
 
-.content{
-  padding: 16px;
+.content {
+  padding: 24px;
+  background-color: #eceff1; 
 }
