@@ -1,10 +1,10 @@
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable, EMPTY } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
 import { Product } from '../interface/product';
-import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
@@ -24,5 +24,17 @@ export class ProductService {
       verticalPosition: 'top',
       panelClass: isError ? ['msg-error'] : ['msgsucess'],
     });
+  }
+
+  create(product: Product): Observable<Product> {
+    return this.http.post<Product>(this.baseUrl, product)
+      .pipe(map((obj) => obj),
+       catchError((e) => this.errorHandler(e))
+    );
+  }
+
+  errorHandler(e: any): Observable<any> {
+    this.showMessage("Ocorreu um erro!", true);
+    return EMPTY;
   }
 }
