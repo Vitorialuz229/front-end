@@ -1,0 +1,16 @@
+.sidenav{
+  width: 200px;
+}
+
+.sidenav a {
+  color: #fff
+}
+
+.sidenav i {
+  padding-right: 1px;
+  vertical-align: bottom;
+}
+
+.content{
+  padding: 16px;
+}
