@@ -9,11 +9,12 @@ import { MatInputModule } from '@angular/material/input'
 
 import { ProductService } from '../../service/product.service';
 import { Product } from '../../interface/product';
+import { ProductReadComponent } from '../product-read/product-read.component';
 
 @Component({
   selector: 'app-product-create',
   standalone: true,
-  imports: [MatFormFieldModule, MatCardModule, MatInputModule, MatButtonModule, FormsModule, HttpClientModule],
+  imports: [MatFormFieldModule, MatCardModule, MatInputModule, MatButtonModule, FormsModule, HttpClientModule, ProductReadComponent],
   templateUrl: './product-create.component.html',
   styleUrl: './product-create.component.css',
   providers: [ProductService]
