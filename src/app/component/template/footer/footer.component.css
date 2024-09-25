@@ -1,13 +1,14 @@
 .footer {
   position: fixed;
   bottom: 0;
-  left: 0; 
+  left: 0;
   right: 0;
   display: flex;
   justify-content: center;
-  background-color: #2e7d32;
-  color: #fff;
+  background-color: #ffffff;
+  color: #738392;
   padding: 10px 0;
+  border-top: 2px solid #ccc;
 }
 
 .footer span {
@@ -15,7 +16,3 @@
   font-weight: 300;
 }
 
-.footer .material-icons {
-  color: #ece392;
-  vertical-align: middle;
-}

@@ -1,18 +1,26 @@
+/* Estilo do Card */
 .home {
-  padding-left: 10px;
-  padding-bottom: 5px;
+  padding: 20px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
+  background-color: #ffffff;
+  color: #333333;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
-.home .title{
+.home .title {
   font-size: 3rem;
-  font-weight: 300;
+  font-weight: 500;
   line-height: 1.2;
+  text-align: center;
+  color: #14BFC5;
 }
 
-.home .subtitle{
-  font-size: 1.1em;
+.home .subtitle {
+  font-size: 1.3em;
+  text-align: center;
+  color: #555555;
 }

@@ -1,9 +1,10 @@
 .header {
   display: flex;
   align-items: center;
-  background-color: #2e7d32; 
-  color: #fff;
+  background-color: #ffffff;
+  color: #6E7C8F;
   padding: 0 16px;
+  border-bottom: 2px solid #ccc;
 }
 
 .header a {

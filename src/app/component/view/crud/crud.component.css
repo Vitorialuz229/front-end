@@ -1,3 +1,6 @@
-button{
+.custom-button {
   margin-bottom: 30px;
+  background-color: #0C9085;
+  color: #042F2E;
+  border: none;
 }

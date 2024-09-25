@@ -3,6 +3,16 @@
   font-size: 1rem;
 }
 
+.custom-button {
+  background-color: #0C9085 !important; /* !important para garantir que essa cor tenha prioridade */
+  color: white;
+}
+
+.custom-back-button {
+  background-color: #455A64 !important;
+  color: white;
+}
+
 form {
   display: flex;
   flex-direction: column;
